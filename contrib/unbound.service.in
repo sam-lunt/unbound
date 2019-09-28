@@ -10,6 +10,7 @@ WantedBy=multi-user.target
 
 [Service]
 ExecReload=+/bin/kill -HUP $MAINPID
+ExecStartPre=@UNBOUND_SBIN_DIR@/unbound-anchor
 ExecStart=@UNBOUND_SBIN_DIR@/unbound -d
 NotifyAccess=main
 Type=notify
